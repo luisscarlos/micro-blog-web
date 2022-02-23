@@ -1,0 +1,29 @@
+<!-- <p>update-news works!</p> -->
+<div class="edit-company-container">
+  <div>
+    <h3>Edit News</h3>
+  </div>
+  <mat-card>
+    <mat-card-content>
+      <form class="form-container" [formGroup]="newsForm" (ngSubmit)="updateNews(newsForm.value)">
+        <mat-form-field>
+          <input matInput name="title" placeholder="News title" formControlName="title">
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+          <input  matInput name="content" placeholder="Content" formControlName="content">
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+          <input matInput name="author" placeholder="Author" formControlName="author">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput name="tags" placeholder="Tags" formControlName="tags">
+        </mat-form-field>
+        <br/>
+
+        <button type="submit" [disabled]="!newsForm.valid" mat-button color="accent" >Save modifications</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
