@@ -1,6 +1,4 @@
 
-# Search bar exercise
-
 Project made to Dynaccurate Technical evaluation.
 
 ## Tecnologies and libs
@@ -27,7 +25,7 @@ Project made to Dynaccurate Technical evaluation.
 
 - Enter folder project: `cd micro-blog-web`
 - Install libs with  `npm install`
-- Start the application with `npm start`
+- Start the application with `ng serve -o`
 PS: To frontend application run properly with all functionabilities, is needed [backend](https://github.com/luisscarlos/micro-blog-api) is up first.
 
 ## License
