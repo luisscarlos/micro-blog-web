@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { News } from 'src/model/news';
 import { NewsService } from 'src/service/news/news.service';
 
@@ -10,15 +11,15 @@ import { NewsService } from 'src/service/news/news.service';
 
 export class ListNewsComponent implements OnInit {
 
-  constructor(private api: NewsService) { }
-  news = {
-    title: "Fila DOWN",
-    content: "N Content",
-    author: "N Author",
-    tags: "N fissura"
-   };
+  newsForm: FormGroup;
+  dataSource: News[] = [];
+  title: string = '';
+  tags: string = '';
 
-   dataSource: News[] = [];
+  constructor(private api: NewsService, private formBuilder: FormBuilder) {
+    this.newsForm = formBuilder.group({});
+   }
+
 
   ngOnInit(): void {
     this.getNews();
@@ -32,20 +33,25 @@ export class ListNewsComponent implements OnInit {
   }
 
   findNewsByTitle(title: string) {
-    this.api.findNewsByTitle(title).subscribe(data => {
-      console.log(data);
-    });
+    console.log('inputvalue ', title)
+    if (title === null || title === '') {
+      this.getNews();
+    } else {
+      this.api.findNewsByTitle(title).subscribe(data => {
+        this.dataSource = data;
+        console.log(data);
+      });
+    }
   }
 
   findNewsByTags(tags: string) {
-    this.api.findNewsByTags(tags).subscribe(data => {
-      console.log(data);
-    });
-  }
-
-  createNews() {
-    this.api.createNews(this.news).subscribe(data => {
-      console.log(data);
-    });
+    if (tags === null || tags === '') {
+      this.getNews();
+    } else {
+      this.api.findNewsByTags(tags).subscribe(data => {
+        this.dataSource = data;
+        console.log(data);
+      });
+    }
   }
 }

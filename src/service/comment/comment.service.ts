@@ -20,4 +20,15 @@ export class CommentService {
   getComments(): Observable<Comment[]> {
     return this.http.get<Comment[]>(apiUrl);
   }
+
+  createComment(id: string, comment: any): Observable<Comment> {
+    const url = `${apiUrl}/${id}`;
+    return this.http.post<Comment>(url, comment);
+  }
+
+  deleteComment(id: string): Observable<Comment> {
+    const url = `${apiUrl}/${id}`;
+
+    return this.http.delete<Comment>(url, httpOptions);
+  }
 }

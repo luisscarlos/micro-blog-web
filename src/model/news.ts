@@ -1,3 +1,5 @@
+import { Comment } from "./comment";
+
 export class News {
 
   id: string;
@@ -6,7 +8,7 @@ export class News {
   content: string;
   author: string;
   tags: string;
-  // comment: Comment[];
+  comment: Array<Comment>;
 
   constructor(
     id: string,
@@ -15,7 +17,7 @@ export class News {
     content: string,
     author: string,
     tags: string,
-    // comment: Comment[]
+    comment: Array<Comment>
   ) {
     this.id = id;
     this.title = title;
@@ -23,6 +25,6 @@ export class News {
     this.content = content;
     this.author = author;
     this.tags = tags;
-    // this.comment = comment;
+    this.comment = comment;
   }
 }

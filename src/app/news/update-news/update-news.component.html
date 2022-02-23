@@ -1,8 +1,8 @@
-<!-- <p>update-news works!</p> -->
-<div class="edit-company-container">
+<div class="edit-news-container">
   <div>
     <h3>Edit News</h3>
   </div>
+  <button mat-flat-button [routerLink]="['/view-news', this.route.snapshot.params['id']]"><mat-icon>keyboard_arrow_left</mat-icon> Voltar</button>
   <mat-card>
     <mat-card-content>
       <form class="form-container" [formGroup]="newsForm" (ngSubmit)="updateNews(newsForm.value)">

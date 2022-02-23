@@ -1,1 +1,28 @@
-<p>create-news works!</p>
+<div class="create-news-container">
+  <div>
+    <h3>Create News</h3>
+  </div>
+  <mat-card>
+    <mat-card-content>
+      <form class="form-container" [formGroup]="newsForm" (ngSubmit)="createNews(newsForm.value)">
+        <mat-form-field>
+          <input matInput name="title" placeholder="News title" formControlName="title">
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+          <input  matInput name="content" placeholder="Content" formControlName="content">
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+          <input matInput name="author" placeholder="Author" formControlName="author">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput name="tags" placeholder="Tags" formControlName="tags">
+        </mat-form-field>
+        <br/>
+
+        <button type="submit" [disabled]="!newsForm.valid" mat-button color="accent" >Create news</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

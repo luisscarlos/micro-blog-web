@@ -14,6 +14,7 @@ const apiUrl = 'http://localhost:8081/api/news';
   providedIn: 'root'
 })
 export class NewsService {
+  [x: string]: any;
 
   constructor(private http: HttpClient) { }
 

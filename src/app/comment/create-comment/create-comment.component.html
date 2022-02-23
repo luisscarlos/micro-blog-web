@@ -1,0 +1,21 @@
+<!-- <p>create-comment works!</p> -->
+<div class="create-commento-container">
+  <div>
+    <h3>Create Comment</h3>
+  </div>
+  <mat-card>
+    <mat-card-content>
+      <form class="form-container" [formGroup]="commentForm" (ngSubmit)="createComment(commentForm.value)">
+        <mat-form-field>
+          <input  matInput name="content" placeholder="Content" formControlName="content">
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+          <input matInput name="author" placeholder="Author" formControlName="author">
+        </mat-form-field>
+
+        <button type="submit" [disabled]="!commentForm.valid" mat-button color="accent" >Create Comment</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,15 +1,27 @@
-<!-- <p>list-news works!</p>
-<form (ngSubmit)="getNews()">
-  <button type="submit">GetNews</button>
-</form> -->
-
-<mat-list *ngFor="let data of dataSource">
-  <mat-card>
-    <mat-card-title>{{data.title}}</mat-card-title>
-    <mat-card-subtitle>{{data.author}}</mat-card-subtitle>
-    <mat-card-actions>
-      <button mat-button routerLink="/view-news/{{data.id}}" >Read</button>
-      <button mat-button>Delete</button>
-    </mat-card-actions>
-  </mat-card>
-</mat-list>
+<div class="list-news-container">
+  <div>
+    <h3>List News</h3>
+  </div>
+  <mat-form-field>
+    <input
+      matInput name="title"
+      placeholder="Search by title"
+      [(ngModel)]="title"
+      (ngModelChange)="findNewsByTitle($event)">
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput name="tags"
+      placeholder="Search by tags"
+      [(ngModel)]="tags"
+      (ngModelChange)="findNewsByTags($event)">
+  </mat-form-field>
+  <mat-list *ngFor="let data of dataSource">
+    <mat-card routerLink="/view-news/{{data.id}}" >
+      <mat-card-title>{{data.title}}</mat-card-title>
+      <mat-card-subtitle>{{data.author}}</mat-card-subtitle>
+      <mat-card-content>{{data.content}}</mat-card-content>
+      <mat-card-subtitle>Tags: {{data.tags}}</mat-card-subtitle>
+    </mat-card>
+  </mat-list>
+</div>

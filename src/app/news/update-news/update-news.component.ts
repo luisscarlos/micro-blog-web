@@ -16,7 +16,7 @@ export class UpdateNewsComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
+    public route: ActivatedRoute,
     private api: NewsService,
     private formBuilder: FormBuilder) {
       this.newsForm = formBuilder.group({});

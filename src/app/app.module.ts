@@ -17,11 +17,12 @@ import { CreateNewsComponent } from './news/create-news/create-news.component';
 import { UpdateNewsComponent } from './news/update-news/update-news.component'
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card'
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NewsService } from 'src/service/news/news.service';
 import { CommentService } from 'src/service/comment/comment.service';
 import { ViewNewsComponent } from './news/view-news/view-news.component';
+import { CreateCommentComponent } from './comment/create-comment/create-comment.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ViewNewsComponent } from './news/view-news/view-news.component';
     ListNewsComponent,
     CreateNewsComponent,
     UpdateNewsComponent,
-    ViewNewsComponent
+    ViewNewsComponent,
+    CreateCommentComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +46,7 @@ import { ViewNewsComponent } from './news/view-news/view-news.component';
     MatIconModule,
     HttpClientModule,
     MatCardModule,
+    FormsModule,
     ReactiveFormsModule
   ],
   providers: [NewsService, CommentService],
