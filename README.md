@@ -15,6 +15,12 @@ Project that allows to create posts like a news blog and add comments to each po
   <img src="https://github.com/luisscarlos/micro-blog-web/blob/master/.github/createComment.png" height="300px" alt="MV Sistemas"/>
 </div>
 
+### Features
+- Create, edit and delete a post.
+- List all posts.
+- Search a post by title or tags
+- Create or delete a comment to a post.
+
 ## Run Locally
 
 - Clone the project
