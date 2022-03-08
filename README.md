@@ -1,5 +1,5 @@
 
-Project made to Dynaccurate Technical evaluation.
+Project that allows to create posts like a news blog and add comments to each post.
 
 ## Tecnologies and libs
 
@@ -26,7 +26,7 @@ Project made to Dynaccurate Technical evaluation.
 - Enter folder project: `cd micro-blog-web`
 - Install libs with  `npm install`
 - Start the application with `ng serve -o`
-PS: To frontend application run properly with all functionabilities, is needed [backend](https://github.com/luisscarlos/micro-blog-api) is up first.
+PS: To frontend application run properly with all functionalities, is needed [backend](https://github.com/luisscarlos/micro-blog-api) is up first.
 
 ## License
 
